@@ -36,8 +36,31 @@ header{position:sticky;top:0;z-index:100;background:rgba(253,250,250,.96);backdr
 /* ── HERO ── */
 .hero{min-height:88vh;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
 @media(max-width:768px){.hero{grid-template-columns:1fr;min-height:auto}}
-.hero-image{background:linear-gradient(135deg,#fad0df 0%,#e896b4 45%,#c05a7a 100%);position:relative;overflow:hidden;min-height:440px;display:flex;align-items:center;justify-content:center}
-.hero-dancer{position:absolute;bottom:0;right:5%;height:90%;width:auto;opacity:.52}
+.hero-image{background:#0d0b10;position:relative;overflow:hidden;min-height:440px;display:flex;align-items:flex-end;justify-content:center}
+/* blobs animados */
+.hero-blob{position:absolute;border-radius:50%;filter:blur(72px);animation:blobFloat 9s ease-in-out infinite;pointer-events:none}
+.hero-blob-1{width:480px;height:480px;background:rgba(192,90,122,.5);top:-140px;right:-100px;animation-delay:0s}
+.hero-blob-2{width:340px;height:340px;background:rgba(184,150,90,.32);bottom:-100px;left:-80px;animation-delay:-3.5s}
+.hero-blob-3{width:220px;height:220px;background:rgba(192,90,122,.22);top:42%;left:28%;animation-delay:-6s}
+@keyframes blobFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(18px,-22px) scale(1.06)}66%{transform:translate(-14px,16px) scale(.95)}}
+/* grid decorativo */
+.hero-grid-overlay{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+/* marca de agua tipográfica */
+.hero-watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Cormorant Garamond',serif;font-size:clamp(5rem,13vw,11rem);font-weight:600;font-style:italic;color:rgba(255,255,255,.04);white-space:nowrap;pointer-events:none;letter-spacing:.06em;line-height:1;user-select:none}
+/* línea dorada decorativa */
+.hero-gold-line{position:absolute;top:0;left:50%;width:1px;height:100%;background:linear-gradient(to bottom,transparent,rgba(184,150,90,.45),transparent);pointer-events:none}
+/* bailarina */
+.hero-dancer{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:90%;width:auto;opacity:.75;filter:drop-shadow(0 0 40px rgba(192,90,122,.45))}
+/* glass badge flotante */
+.hero-glass-badge{position:absolute;top:2rem;left:1.8rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(10px);border-radius:2rem;padding:.48rem 1.1rem;display:flex;align-items:center;gap:.5rem;animation:floatBadge 4s ease-in-out infinite}
+.hero-glass-badge span{font-family:'Jost',sans-serif;font-size:.68rem;font-weight:500;color:rgba(255,255,255,.8);letter-spacing:.09em;text-transform:uppercase}
+.hero-glass-dot{width:7px;height:7px;border-radius:50%;background:#c05a7a;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+@keyframes floatBadge{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+/* glass card inferior */
+.hero-glass-card{position:absolute;bottom:1.8rem;right:1.5rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(14px);border-radius:14px;padding:.85rem 1.15rem;text-align:right;animation:floatBadge 5s ease-in-out infinite;animation-delay:-2s}
+.hgc-num{font-family:'Cormorant Garamond',serif;font-size:1.85rem;font-weight:600;color:#fff;line-height:1}
+.hgc-label{font-family:'Jost',sans-serif;font-size:.6rem;font-weight:400;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.12em;margin-top:.18rem}
 .hero-content{display:flex;flex-direction:column;justify-content:center;padding:clamp(2rem,5vw,5rem) clamp(1.5rem,4vw,4rem)}
 .hero-eyebrow{font-size:.67rem;letter-spacing:.28em;text-transform:uppercase;color:var(--rose);margin-bottom:.9rem;font-weight:500}
 .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.7rem,5.5vw,5rem);font-weight:300;line-height:1.06;color:var(--black);margin-bottom:1.3rem}
@@ -235,18 +258,56 @@ footer{background:var(--dark);color:#fff;padding:clamp(2.5rem,5vw,4rem) clamp(1r
 <!-- ═══ HERO ═══ -->
 <section class="hero">
   <div class="hero-image">
-    <svg class="hero-dancer" viewBox="0 0 220 440" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="110" cy="32" rx="22" ry="26" fill="white" opacity=".65"/>
-      <path d="M110 58C104 74 98 92 97 110C95 130 103 142 110 144C117 142 125 130 123 110C122 92 116 74 110 58Z" fill="white" opacity=".65"/>
-      <path d="M82 135C58 145 40 165 35 185C58 178 84 172 110 172C136 172 162 178 185 185C180 165 162 145 138 135Z" fill="white" opacity=".45"/>
-      <path d="M70 140C46 155 28 180 22 205C50 195 80 188 110 188C140 188 170 195 198 205C192 180 174 155 150 140Z" fill="white" opacity=".22"/>
-      <line x1="100" y1="80" x2="62" y2="65" stroke="white" stroke-width="8" stroke-linecap="round" opacity=".65"/>
-      <line x1="120" y1="80" x2="165" y2="58" stroke="white" stroke-width="8" stroke-linecap="round" opacity=".65"/>
-      <line x1="106" y1="172" x2="100" y2="310" stroke="white" stroke-width="8" stroke-linecap="round" opacity=".55"/>
-      <line x1="114" y1="172" x2="138" y2="300" stroke="white" stroke-width="8" stroke-linecap="round" opacity=".55"/>
-      <path d="M100 310C94 330 84 342 74 336" stroke="white" stroke-width="7" stroke-linecap="round" opacity=".55"/>
-      <path d="M138 300C144 318 156 328 165 321" stroke="white" stroke-width="7" stroke-linecap="round" opacity=".55"/>
+    <!-- blobs de fondo animados -->
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="hero-blob hero-blob-3"></div>
+    <!-- grid y línea decorativa -->
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-gold-line"></div>
+    <!-- marca de agua tipográfica -->
+    <div class="hero-watermark">Ballet</div>
+    <!-- badge flotante superior -->
+    <div class="hero-glass-badge">
+      <div class="hero-glass-dot"></div>
+      <span>Colección 2026</span>
+    </div>
+    <!-- bailarina SVG centrada, más detallada -->
+    <svg class="hero-dancer" viewBox="0 0 260 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- cabeza -->
+      <ellipse cx="130" cy="38" rx="26" ry="30" fill="white" opacity=".9"/>
+      <!-- moño -->
+      <ellipse cx="130" cy="12" rx="18" ry="9" fill="rgba(192,90,122,.7)"/>
+      <!-- torso -->
+      <path d="M130 68C122 88 116 108 114 130C112 154 120 168 130 170C140 168 148 154 146 130C144 108 138 88 130 68Z" fill="white" opacity=".88"/>
+      <!-- tutú -->
+      <path d="M96 158C70 170 46 194 40 218C68 210 99 204 130 204C161 204 192 210 220 218C214 194 190 170 164 158Z" fill="rgba(192,90,122,.65)"/>
+      <path d="M88 163C58 178 34 208 28 236C60 226 94 220 130 220C166 220 200 226 232 236C226 208 202 178 172 163Z" fill="rgba(192,90,122,.35)"/>
+      <path d="M80 168C46 186 20 220 14 250C50 238 90 230 130 230C170 230 210 238 246 250C240 220 214 186 180 168Z" fill="rgba(192,90,122,.15)"/>
+      <!-- brazo izq — extendido hacia fuera -->
+      <path d="M116 92C104 104 78 108 56 98" stroke="white" stroke-width="9" stroke-linecap="round" opacity=".88"/>
+      <path d="M56 98C46 94 40 90 34 80" stroke="white" stroke-width="7" stroke-linecap="round" opacity=".7"/>
+      <!-- brazo der — alzado elegante -->
+      <path d="M144 86C158 72 178 60 196 44" stroke="white" stroke-width="9" stroke-linecap="round" opacity=".88"/>
+      <path d="M196 44C204 38 210 30 214 20" stroke="white" stroke-width="7" stroke-linecap="round" opacity=".7"/>
+      <!-- pierna izq -->
+      <path d="M120 204C114 248 108 290 106 340" stroke="white" stroke-width="9" stroke-linecap="round" opacity=".8"/>
+      <path d="M106 340C102 366 92 386 78 394" stroke="white" stroke-width="8" stroke-linecap="round" opacity=".7"/>
+      <path d="M78 394C68 398 58 396 50 386" stroke="white" stroke-width="6" stroke-linecap="round" opacity=".6"/>
+      <!-- pierna der — levantada arabesco -->
+      <path d="M140 204C150 234 164 260 180 280" stroke="white" stroke-width="9" stroke-linecap="round" opacity=".8"/>
+      <path d="M180 280C196 300 218 314 238 316" stroke="white" stroke-width="8" stroke-linecap="round" opacity=".7"/>
+      <!-- detalles zapatillas -->
+      <ellipse cx="54" cy="390" rx="14" ry="7" fill="rgba(192,90,122,.55)" opacity=".8"/>
+      <ellipse cx="240" cy="316" rx="12" ry="6" fill="rgba(192,90,122,.55)" opacity=".8"/>
+      <!-- aura/glow rosa sutil alrededor -->
+      <ellipse cx="130" cy="260" rx="80" ry="130" fill="rgba(192,90,122,.04)"/>
     </svg>
+    <!-- glass card inferior derecha -->
+    <div class="hero-glass-card">
+      <div class="hgc-num">60+</div>
+      <div class="hgc-label">Productos</div>
+    </div>
   </div>
   <div class="hero-content">
     <span class="hero-eyebrow">Catálogo 2026</span>
