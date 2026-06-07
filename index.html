@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalttex — Just Dance · Catálogo 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --rose:#c05a7a;--rose-mid:#d4748e;--rose-light:#f2d4dc;--rose-pale:#fdf5f7;
+  --gold:#b8965a;--gold-light:#eddfc8;
+  --black:#111;--dark:#1e1e1e;--medium:#4a4a4a;--gray:#8a8a8a;
+  --border:#ede5e7;--white:#fff;--off:#fdfafa;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--off);color:var(--dark);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* ── HEADER ── */
+header{position:sticky;top:0;z-index:100;background:rgba(253,250,250,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,5vw,4rem);height:62px;gap:1rem}
+.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;flex-shrink:0}
+.logo-img{height:44px;width:auto;object-fit:contain}
+.logo-fallback{display:flex;align-items:center;gap:.6rem}
+.logo-text{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--black);letter-spacing:.05em;line-height:1}
+.logo-sub{font-size:.56rem;letter-spacing:.14em;color:var(--rose);text-transform:uppercase;display:block}
+.header-right{display:flex;align-items:center;gap:.6rem}
+.cart-btn{background:none;border:1px solid var(--border);cursor:pointer;position:relative;display:flex;align-items:center;gap:.4rem;padding:.42rem .9rem;border-radius:2rem;color:var(--dark);font-family:'Jost',sans-serif;font-size:.78rem;font-weight:500;transition:all .2s}
+.cart-btn:hover{background:var(--rose-light);border-color:var(--rose-light);color:var(--rose)}
+.cart-badge{position:absolute;top:-5px;right:-5px;background:var(--rose);color:#fff;min-width:18px;height:18px;border-radius:9px;font-size:.6rem;font-weight:700;display:none;align-items:center;justify-content:center;padding:0 4px}
+.cart-badge.pop{animation:pop .22s ease}
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.45)}100%{transform:scale(1)}}
+.header-cta{background:var(--rose);color:#fff;border:none;padding:.44rem 1.1rem;border-radius:2rem;font-family:'Jost',sans-serif;font-size:.78rem;font-weight:500;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:.35rem;transition:background .2s;white-space:nowrap}
+.header-cta:hover{background:#a84d6a}
+
+/* ── HERO ── */
+.hero{min-height:88vh;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+@media(max-width:768px){.hero{grid-template-columns:1fr;min-height:auto}}
+.hero-image{background:linear-gradient(135deg,#fad0df 0%,#e896b4 45%,#c05a7a 100%);position:relative;overflow:hidden;min-height:440px;display:flex;align-items:center;justify-content:center}
+.hero-dancer{position:absolute;bottom:0;right:5%;height:90%;width:auto;opacity:.52}
+.hero-content{display:flex;flex-direction:column;justify-content:center;padding:clamp(2rem,5vw,5rem) clamp(1.5rem,4vw,4rem)}
+.hero-eyebrow{font-size:.67rem;letter-spacing:.28em;text-transform:uppercase;color:var(--rose);margin-bottom:.9rem;font-weight:500}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.7rem,5.5vw,5rem);font-weight:300;line-height:1.06;color:var(--black);margin-bottom:1.3rem}
+.hero-title em{color:var(--rose);font-style:italic}
+.hero-desc{font-size:.9rem;color:var(--medium);max-width:390px;margin-bottom:1.7rem;font-weight:300;line-height:1.85}
+.hero-badges{display:flex;gap:.55rem;flex-wrap:wrap;margin-bottom:2rem}
+.badge{background:var(--rose-light);color:var(--rose);font-size:.68rem;font-weight:500;padding:.26rem .72rem;border-radius:2rem;letter-spacing:.04em}
+.hero-actions{display:flex;gap:.85rem;flex-wrap:wrap}
+.btn-primary{background:var(--rose);color:#fff;padding:.78rem 1.7rem;border:none;border-radius:2rem;font-family:'Jost',sans-serif;font-size:.82rem;font-weight:500;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.42rem;transition:all .2s}
+.btn-primary:hover{background:#a84d6a;transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--dark);padding:.78rem 1.7rem;border:1px solid var(--border);border-radius:2rem;font-family:'Jost',sans-serif;font-size:.82rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:all .2s}
+.btn-secondary:hover{border-color:var(--rose);color:var(--rose)}
+
+/* ── INFO BAR ── */
+.info-bar{background:var(--dark);color:#fff;display:flex;justify-content:center;gap:clamp(.8rem,3.5vw,3rem);padding:1rem clamp(1rem,5vw,4rem);flex-wrap:wrap}
+.info-item{display:flex;align-items:center;gap:.42rem;font-size:.74rem;letter-spacing:.04em;font-weight:300;color:rgba(255,255,255,.8)}
+.info-item svg{color:var(--rose-mid);flex-shrink:0}
+
+/* ── CATEGORY NAV ── */
+.cat-nav-wrap{position:sticky;top:62px;z-index:90;background:var(--off);border-bottom:1px solid var(--border)}
+.cat-nav{display:flex;overflow-x:auto;padding:0 clamp(1rem,5vw,4rem);scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-btn{background:none;border:none;border-bottom:2px solid transparent;padding:.88rem 1.05rem;font-family:'Jost',sans-serif;font-size:.77rem;font-weight:400;color:var(--gray);cursor:pointer;white-space:nowrap;transition:all .2s;letter-spacing:.04em}
+.cat-btn:hover{color:var(--dark)}
+.cat-btn.active{color:var(--rose);border-bottom-color:var(--rose);font-weight:600}
+
+/* ── CATALOG ── */
+#catalogo{padding:clamp(2.5rem,5vw,4.5rem) clamp(1rem,5vw,4rem);max-width:1400px;margin:0 auto}
+.section-header{margin-bottom:2.5rem;text-align:center}
+.section-label{font-size:.67rem;letter-spacing:.28em;text-transform:uppercase;color:var(--rose);font-weight:500;display:block;margin-bottom:.6rem}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,3.2rem);font-weight:300;color:var(--black);line-height:1.1}
+
+/* ── PRODUCT GRID ── */
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:1.35rem}
+@media(max-width:500px){.product-grid{grid-template-columns:1fr 1fr;gap:.7rem}}
+
+/* ── PRODUCT CARD ── */
+.product-card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--border);transition:transform .22s,box-shadow .22s;animation:fadeUp .32s ease both}
+.product-card:hover{transform:translateY(-3px);box-shadow:0 14px 38px rgba(0,0,0,.09)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.card-image{aspect-ratio:3/4;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.card-image img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.card-badge{position:absolute;top:.7rem;left:.7rem;background:var(--rose);color:#fff;font-size:.61rem;font-weight:600;padding:.2rem .55rem;border-radius:2rem;letter-spacing:.07em;text-transform:uppercase;z-index:1}
+.card-badge.nuevo{background:var(--gold)}
+.dancer-wrap{width:100%;height:100%;display:flex;align-items:center;justify-content:center;position:relative}
+.card-body{padding:.95rem 1.1rem}
+.card-cat{font-size:.61rem;letter-spacing:.17em;text-transform:uppercase;color:var(--gray);font-weight:500;margin-bottom:.28rem}
+.card-name{font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-weight:600;color:var(--black);margin-bottom:.32rem;line-height:1.2}
+.card-desc{font-size:.73rem;color:var(--gray);font-weight:300;line-height:1.55;margin-bottom:.65rem}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:.65rem;border-top:1px solid var(--border);gap:.5rem}
+.card-price{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--rose);line-height:1}
+.card-price-note{font-size:.6rem;color:var(--gray);display:block;line-height:1.3;margin-top:.1rem}
+.card-add{background:var(--rose);color:#fff;border:none;padding:.42rem 1rem;border-radius:2rem;font-family:'Jost',sans-serif;font-size:.72rem;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:.3rem;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.card-add:hover{background:#a84d6a;transform:translateY(-1px)}
+.card-add.added{background:#2e7d32}
+@media(max-width:500px){.card-body{padding:.7rem .75rem}.card-name{font-size:1rem}.card-add{padding:.38rem .7rem;font-size:.68rem}}
+
+/* ── SHIPPING ── */
+.shipping-section{background:var(--rose-pale);padding:clamp(3rem,6vw,5rem) clamp(1rem,5vw,4rem)}
+.shipping-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+@media(max-width:768px){.shipping-grid{grid-template-columns:1fr}}
+.shipping-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;color:var(--black);margin-bottom:1.35rem;line-height:1.15}
+.ship-items{display:flex;flex-direction:column;gap:.85rem}
+.ship-item{display:flex;align-items:flex-start;gap:.85rem}
+.ship-icon{width:36px;height:36px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.ship-text h4{font-size:.8rem;font-weight:600;color:var(--dark);margin-bottom:.14rem}
+.ship-text p{font-size:.73rem;color:var(--gray);font-weight:300}
+.pay-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;margin-bottom:1rem;color:var(--black)}
+.pay-cards{display:flex;flex-direction:column;gap:.8rem}
+.pay-card{background:#fff;border-radius:10px;padding:1rem 1.15rem;display:flex;align-items:center;gap:.85rem;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.pay-logo{width:44px;height:28px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:.66rem;font-weight:700;flex-shrink:0;color:#fff}
+.pay-logo.bcp{background:#00529b}.pay-logo.yape{background:#6c198b}.pay-logo.plin{background:#00b140}
+.pay-info h4{font-size:.78rem;font-weight:600;color:var(--dark)}
+.pay-info p{font-size:.7rem;color:var(--gray);font-weight:300;line-height:1.5}
+
+/* ── FOOTER ── */
+footer{background:var(--dark);color:#fff;padding:clamp(2.5rem,5vw,4rem) clamp(1rem,5vw,4rem);display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem}
+@media(max-width:768px){footer{grid-template-columns:1fr;gap:1.8rem}}
+.foot-brand-name{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:400;color:#fff;margin-bottom:.3rem}
+.foot-tagline{font-size:.68rem;color:rgba(255,255,255,.3);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem}
+.foot-contact p{font-size:.78rem;color:rgba(255,255,255,.62);line-height:2.1;font-weight:300}
+.foot-contact a{color:var(--rose-mid);text-decoration:none}
+.foot-col h4{font-size:.63rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:.85rem;font-weight:500}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:.42rem}
+.foot-col ul li a{font-size:.78rem;color:rgba(255,255,255,.62);text-decoration:none;font-weight:300;transition:color .2s;cursor:pointer}
+.foot-col ul li a:hover{color:#fff}
+.foot-bottom{background:#0e0e0e;padding:.85rem clamp(1rem,5vw,4rem);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.4rem}
+.foot-bottom p{font-size:.68rem;color:rgba(255,255,255,.22);font-weight:300}
+
+/* ── CART DRAWER ── */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.32);z-index:300;opacity:0;pointer-events:none;transition:opacity .25s}
+.cart-overlay.open{opacity:1;pointer-events:auto}
+.cart-drawer{position:fixed;top:0;right:0;bottom:0;width:min(430px,100vw);background:#fff;z-index:301;transform:translateX(102%);transition:transform .3s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-4px 0 30px rgba(0,0,0,.14)}
+.cart-drawer.open{transform:translateX(0)}
+.cart-head{display:flex;align-items:center;justify-content:space-between;padding:1.15rem 1.35rem;border-bottom:1px solid var(--border);flex-shrink:0}
+.cart-head h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--black)}
+.cart-head-right{display:flex;align-items:center;gap:.5rem}
+.cart-count-label{font-size:.72rem;color:var(--gray);font-weight:400}
+.cart-close{background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--gray);line-height:1;width:30px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center}
+.cart-close:hover{background:var(--rose-light);color:var(--rose)}
+.cart-body{flex:1;overflow-y:auto;padding:.8rem 1.35rem}
+.cart-empty{text-align:center;padding:3rem 1rem;color:var(--gray)}
+.cart-empty p{font-size:.82rem;line-height:1.7;margin-top:.75rem}
+.cart-item{display:flex;gap:.8rem;padding:.85rem 0;border-bottom:1px solid var(--border)}
+.cart-item:last-child{border-bottom:none}
+.cart-thumb{width:54px;height:70px;border-radius:8px;overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.cart-info{flex:1;min-width:0}
+.ci-name{font-family:'Cormorant Garamond',serif;font-size:.98rem;font-weight:600;color:var(--black);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ci-price{font-size:.78rem;color:var(--rose);font-weight:600;margin:.15rem 0 .38rem}
+.ci-note{width:100%;border:1px solid var(--border);border-radius:6px;padding:.28rem .58rem;font-family:'Jost',sans-serif;font-size:.7rem;color:var(--dark);outline:none;transition:border-color .2s}
+.ci-note:focus{border-color:var(--rose)}
+.ci-note::placeholder{color:#bbb}
+.ci-qty{display:flex;align-items:center;gap:.45rem;margin-top:.45rem}
+.qty-btn{background:var(--rose-light);border:none;width:22px;height:22px;border-radius:50%;cursor:pointer;font-size:.88rem;display:flex;align-items:center;justify-content:center;transition:background .18s;font-weight:600;color:var(--rose)}
+.qty-btn:hover{background:var(--rose);color:#fff}
+.qty-num{font-size:.8rem;font-weight:600;min-width:18px;text-align:center;color:var(--dark)}
+.ci-sub{font-size:.68rem;color:var(--gray);margin-left:.2rem}
+.cart-remove{background:none;border:none;cursor:pointer;color:#ccc;font-size:1.15rem;padding:.18rem .3rem;border-radius:4px;align-self:flex-start;margin-top:.1rem;line-height:1;flex-shrink:0}
+.cart-remove:hover{color:#e53935}
+.cart-foot{padding:1.1rem 1.35rem;border-top:1px solid var(--border);flex-shrink:0}
+.cart-total-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:.85rem}
+.cart-total-label{font-size:.78rem;color:var(--gray)}
+.cart-total-amount{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--black)}
+.cart-global-note{width:100%;border:1px solid var(--border);border-radius:8px;padding:.55rem .8rem;font-family:'Jost',sans-serif;font-size:.76rem;color:var(--dark);outline:none;resize:none;transition:border-color .2s;margin-bottom:.85rem;height:58px}
+.cart-global-note:focus{border-color:var(--rose)}
+.cart-wa-btn{width:100%;background:#25d366;color:#fff;border:none;padding:.85rem;border-radius:2rem;font-family:'Jost',sans-serif;font-size:.84rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.45rem;text-decoration:none;transition:background .2s}
+.cart-wa-btn:hover{background:#1da854}
+#cart-wa-section{display:none}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:5.5rem;right:1.4rem;z-index:400;background:var(--dark);color:#fff;padding:.46rem 1rem;border-radius:2rem;font-size:.76rem;font-weight:500;opacity:0;transform:translateY(8px);transition:all .22s;pointer-events:none}
+.toast.show{opacity:1;transform:translateY(0)}
+
+/* ── WA FLOAT ── */
+.wa-float{position:fixed;bottom:1.4rem;right:1.4rem;z-index:200;background:#25d366;color:#fff;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.4);transition:transform .2s}
+.wa-float:hover{transform:scale(1.1)}
+
+/* scrollbar */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-thumb{background:var(--rose-light);border-radius:3px}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <a href="#" class="logo">
+    <!-- Coloca kalttex-logo.png en la misma carpeta que este archivo -->
+    <img src="kalttex-logo.png" alt="Kalttex Just Dance" class="logo-img"
+      onerror="this.style.display='none';document.getElementById('lf').style.display='flex'">
+    <div id="lf" class="logo-fallback" style="display:none">
+      <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="20" fill="#f5dce4"/>
+        <ellipse cx="20" cy="9" rx="4.5" ry="5.5" fill="#c05a7a"/>
+        <path d="M20 14.5C17 20 15 25 15.5 30C17 33 20 34 20 34C20 34 23 33 24.5 30C25 25 23 20 20 14.5Z" fill="#c05a7a"/>
+        <path d="M15 28C10 30 7 34 6 37C11 35 16 33 20 33C24 33 29 35 34 37C33 34 30 30 25 28Z" fill="#c05a7a" opacity=".5"/>
+        <line x1="17" y1="19" x2="10" y2="16" stroke="#c05a7a" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="23" y1="19" x2="31" y2="15" stroke="#c05a7a" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <span class="logo-text">Kalttex</span>
+        <span class="logo-sub">Just Dance</span>
+      </div>
+    </div>
+  </a>
+  <div class="header-right">
+    <button class="cart-btn" onclick="openCart()" title="Ver mi pedido">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      Mi pedido
+      <span id="cart-badge" class="cart-badge">0</span>
+    </button>
+    <a href="https://wa.me/51997480191?text=Hola!%20Vi%20el%20cat%C3%A1logo%20y%20quiero%20hacer%20un%20pedido." target="_blank" class="header-cta">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Contacto
+    </a>
+  </div>
+</header>
+
+<!-- ═══ CATEGORY NAV ═══ -->
+<div class="cat-nav-wrap">
+  <nav class="cat-nav">
+    <button class="cat-btn active" onclick="filterCat('all',this)">Todos</button>
+    <button class="cat-btn" onclick="filterCat('kits-ninas',this)">Kits Niñas</button>
+    <button class="cat-btn" onclick="filterCat('kits-adulto',this)">Kit Adulto</button>
+    <button class="cat-btn" onclick="filterCat('petite',this)">Colección Petite</button>
+    <button class="cat-btn" onclick="filterCat('leotardos',this)">Leotardos</button>
+    <button class="cat-btn" onclick="filterCat('faldas',this)">Faldas</button>
+    <button class="cat-btn" onclick="filterCat('zapatillas',this)">Zapatillas</button>
+    <button class="cat-btn" onclick="filterCat('pantys',this)">Pantys & Medias</button>
+    <button class="cat-btn" onclick="filterCat('gimnasia',this)">Gimnasia Rítmica</button>
+    <button class="cat-btn" onclick="filterCat('accesorios',this)">Accesorios</button>
+  </nav>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-image">
+    <svg class="hero-dancer" viewBox="0 0 220 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="110" cy="32" rx="22" ry="26" fill="white" opacity=".65"/>
+      <path d="M110 58C104 74 98 92 97 110C95 130 103 142 110 144C117 142 125 130 123 110C122 92 116 74 110 58Z" fill="white" opacity=".65"/>
+      <path d="M82 135C58 145 40 165 35 185C58 178 84 172 110 172C136 172 162 178 185 185C180 165 162 145 138 135Z" fill="white" opacity=".45"/>
+      <path d="M70 140C46 155 28 180 22 205C50 195 80 188 110 188C140 188 170 195 198 205C192 180 174 155 150 140Z" fill="white" opacity=".22"/>
+      <line x1="100" y1="80" x2="62" y2="65" stroke="white" stroke-width="8" stroke-linecap="round" opacity=".65"/>
+      <line x1="120" y1="80" x2="165" y2="58" stroke="white" stroke-width="8" stroke-linecap="round" opacity=".65"/>
+      <line x1="106" y1="172" x2="100" y2="310" stroke="white" stroke-width="8" stroke-linecap="round" opacity=".55"/>
+      <line x1="114" y1="172" x2="138" y2="300" stroke="white" stroke-width="8" stroke-linecap="round" opacity=".55"/>
+      <path d="M100 310C94 330 84 342 74 336" stroke="white" stroke-width="7" stroke-linecap="round" opacity=".55"/>
+      <path d="M138 300C144 318 156 328 165 321" stroke="white" stroke-width="7" stroke-linecap="round" opacity=".55"/>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Catálogo 2026</span>
+    <h1 class="hero-title">Indumentaria<br><em>de ballet</em><br>para todas</h1>
+    <p class="hero-desc">Kits completos, leotardos, zapatillas y accesorios nacionales e importados para ballet, gimnasia rítmica y todo tipo de danza. Somos fabricantes.</p>
+    <div class="hero-badges">
+      <span class="badge">Fabricantes</span>
+      <span class="badge">Envíos nacionales</span>
+      <span class="badge">Lun–Sáb · 9AM–8PM</span>
+    </div>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="openCart()">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        Armar mi pedido
+      </button>
+      <a href="#catalogo" class="btn-secondary">Ver catálogo →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INFO BAR ═══ -->
+<div class="info-bar">
+  <div class="info-item">
+    <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    Av. Abancay 368 Tda 1058 · Galería La Casona de la Virreyna
+  </div>
+  <div class="info-item">
+    <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    Lunes a Sábado · 9 AM – 8 PM
+  </div>
+  <div class="info-item">
+    <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+    Envíos a todo el Perú
+  </div>
+  <div class="info-item">
+    <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+    Tienda física disponible
+  </div>
+</div>
+
+<!-- ═══ CATALOG ═══ -->
+<section id="catalogo">
+  <div class="section-header">
+    <span class="section-label">Colección 2026</span>
+    <h2 class="section-title">Catálogo Completo</h2>
+  </div>
+  <div class="product-grid" id="grid"></div>
+</section>
+
+<!-- ═══ SHIPPING & PAYMENT ═══ -->
+<section class="shipping-section">
+  <div class="shipping-grid">
+    <div>
+      <h2 class="shipping-title">Envíos confiables<br>a todo el Perú</h2>
+      <div class="ship-items">
+        <div class="ship-item">
+          <div class="ship-icon"><svg width="16" height="16" fill="none" stroke="#c05a7a" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="ship-text"><h4>Lima — Olva Courier (misma oficina)</h4><p>S/ 10.00 · Recojo en el mismo día</p></div>
+        </div>
+        <div class="ship-item">
+          <div class="ship-icon"><svg width="16" height="16" fill="none" stroke="#c05a7a" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+          <div class="ship-text"><h4>Lima — Motorizado a domicilio</h4><p>S/ 12 a S/15 · Entrega al día siguiente (2PM–8PM)</p></div>
+        </div>
+        <div class="ship-item">
+          <div class="ship-icon"><svg width="16" height="16" fill="none" stroke="#c05a7a" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
+          <div class="ship-text"><h4>Provincias — Agencia de tu preferencia</h4><p>S/ 8 flete · Tú pagas el envío al recibir</p></div>
+        </div>
+        <div class="ship-item">
+          <div class="ship-icon"><svg width="16" height="16" fill="none" stroke="#b8965a" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <div class="ship-text"><h4>No hacemos contraentrega</h4><p>Pago previo antes del despacho</p></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 class="pay-title">Formas de pago</h3>
+      <div class="pay-cards">
+        <div class="pay-card">
+          <div class="pay-logo bcp">BCP</div>
+          <div class="pay-info"><h4>Kelly Paola Serrano Herrera</h4><p>Cta. Soles: 19138315021040<br>CCI: 00219113831502104058</p></div>
+        </div>
+        <div class="pay-card">
+          <div class="pay-logo yape">Yape</div>
+          <div class="pay-info"><h4>Kelly Paola Serrano Herrera</h4><p>997 480 191</p></div>
+        </div>
+        <div class="pay-card">
+          <div class="pay-logo plin">Plin</div>
+          <div class="pay-info"><h4>Kelly Paola Serrano Herrera</h4><p>997 480 191</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div>
+    <div class="foot-brand-name">Kalttex</div>
+    <div class="foot-tagline">Just Dance...</div>
+    <div class="foot-contact">
+      <p>📍 Av. Abancay 368 Tda 1058 (piso 1)<br>Galería La Casona de la Virreyna, Lima<br><br>📞 <a href="tel:+51997480191">997 480 191</a> (único número)<br>🕐 Lunes a Sábado · 9 AM – 8 PM<br><br>🎵 TikTok: <a href="#">Kalttex</a></p>
+    </div>
+  </div>
+  <div class="foot-col">
+    <h4>Productos</h4>
+    <ul>
+      <li><a onclick="filterCat('kits-ninas',null)">Kits Niñas</a></li>
+      <li><a onclick="filterCat('kits-adulto',null)">Kit Adulto</a></li>
+      <li><a onclick="filterCat('petite',null)">Colección Petite</a></li>
+      <li><a onclick="filterCat('leotardos',null)">Leotardos</a></li>
+      <li><a onclick="filterCat('zapatillas',null)">Zapatillas</a></li>
+      <li><a onclick="filterCat('accesorios',null)">Accesorios</a></li>
+    </ul>
+  </div>
+  <div class="foot-col">
+    <h4>Empresa</h4>
+    <ul>
+      <li><a>Somos fabricantes</a></li>
+      <li><a>Tienda física Lima</a></li>
+      <li><a>Envíos nacionales</a></li>
+      <li><a href="https://wa.me/51997480191" target="_blank">WhatsApp</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="foot-bottom">
+  <p>© 2026 Kalttex — Just Dance. Lima, Perú.</p>
+  <p>Envíos a nivel nacional</p>
+</div>
+
+<!-- ═══ CART DRAWER ═══ -->
+<div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-head">
+    <h3>Mi Pedido</h3>
+    <div class="cart-head-right">
+      <span class="cart-count-label" id="cart-count-label"></span>
+      <button class="cart-close" onclick="closeCart()">×</button>
+    </div>
+  </div>
+  <div class="cart-body" id="cart-items">
+    <!-- rendered by JS -->
+  </div>
+  <div class="cart-foot">
+    <div id="cart-wa-section">
+      <div class="cart-total-row">
+        <span class="cart-total-label">Total estimado</span>
+        <span class="cart-total-amount" id="cart-total">S/ 0</span>
+      </div>
+      <textarea class="cart-global-note" id="global-note" placeholder="Observaciones generales (ej: dirección, fecha preferida de entrega...)" oninput="updateWALink()"></textarea>
+      <a class="cart-wa-btn" id="cart-wa-btn" href="#" target="_blank">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Confirmar pedido por WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TOAST ═══ -->
+<div class="toast" id="toast"></div>
+
+<!-- ═══ WA FLOAT ═══ -->
+<a href="https://wa.me/51997480191?text=Hola!%20Vi%20el%20cat%C3%A1logo%20Kalttex%20y%20quiero%20hacer%20un%20pedido." target="_blank" class="wa-float" title="Pedir por WhatsApp">
+  <svg width="25" height="25" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+/* ═══ CART STATE ═══ */
+let cart = [];
+
+function parsePrice(str){ const m = str.match(/[\d]+/); return m ? parseInt(m[0]) : 0; }
+
+function addToCart(idx){
+  const p = products[idx];
+  const key = p.name;
+  const existing = cart.find(i=>i.key===key);
+  if(existing){ existing.qty++; }
+  else{ cart.push({key, name:p.name, price:p.price, priceNum:parsePrice(p.price), g:p.g, dc:p.dc, qty:1, note:''}); }
+  updateBadge();
+  renderCart();
+  openCart();
+  showToast(`✓ ${p.name} agregado`);
+  // visual feedback on button
+  const btn = document.getElementById('add-btn-'+idx);
+  if(btn){ btn.textContent='✓ Agregado'; btn.classList.add('added'); setTimeout(()=>{ btn.innerHTML='+ Agregar'; btn.classList.remove('added'); },1500); }
+}
+
+function removeFromCart(key){ cart=cart.filter(i=>i.key!==key); updateBadge(); renderCart(); }
+
+function changeQty(key,d){
+  const item=cart.find(i=>i.key===key);
+  if(!item)return;
+  item.qty+=d;
+  if(item.qty<=0){ removeFromCart(key); return; }
+  updateBadge(); renderCart();
+}
+
+function updateNote(key,val){ const item=cart.find(i=>i.key===key); if(item){ item.note=val; updateWALink(); } }
+
+function updateBadge(){
+  const total=cart.reduce((s,i)=>s+i.qty,0);
+  const b=document.getElementById('cart-badge');
+  b.textContent=total;
+  b.style.display=total>0?'flex':'none';
+  b.classList.remove('pop'); void b.offsetWidth; if(total>0)b.classList.add('pop');
+}
+
+function openCart(){ document.getElementById('cart-overlay').classList.add('open'); document.getElementById('cart-drawer').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeCart(){ document.getElementById('cart-overlay').classList.remove('open'); document.getElementById('cart-drawer').classList.remove('open'); document.body.style.overflow=''; }
+
+function miniDancer(c='rgba(255,255,255,0.45)'){
+  return `<svg viewBox="0 0 60 90" style="width:62%;opacity:.5"><ellipse cx="30" cy="7" rx="5" ry="5.5" fill="${c}"/><path d="M30 12C27 18 25 24 25 30C24 37 27 40 30 40C33 40 36 37 35 30C35 24 33 18 30 12Z" fill="${c}"/><path d="M21 37C15 40 10 47 9 53C16 50 23 48 30 48C37 48 44 50 51 53C50 47 45 40 39 37Z" fill="${c}" opacity=".55"/><line x1="26" y1="20" x2="16" y2="15" stroke="${c}" stroke-width="3" stroke-linecap="round"/><line x1="34" y1="20" x2="46" y2="12" stroke="${c}" stroke-width="3" stroke-linecap="round"/><line x1="28" y1="48" x2="26" y2="78" stroke="${c}" stroke-width="3" stroke-linecap="round"/><line x1="32" y1="48" x2="38" y2="74" stroke="${c}" stroke-width="3" stroke-linecap="round"/></svg>`;
+}
+
+function renderCart(){
+  const body=document.getElementById('cart-items');
+  const ws=document.getElementById('cart-wa-section');
+  const label=document.getElementById('cart-count-label');
+  if(cart.length===0){
+    body.innerHTML=`<div class="cart-empty"><svg width="44" height="44" fill="none" stroke="#ccc" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><p>Tu pedido está vacío.<br>Agrega productos del catálogo.</p></div>`;
+    ws.style.display='none';
+    label.textContent='';
+    return;
+  }
+  const totalQty=cart.reduce((s,i)=>s+i.qty,0);
+  const totalAmt=cart.reduce((s,i)=>s+i.qty*i.priceNum,0);
+  label.textContent=totalQty===1?'1 producto':`${totalQty} productos`;
+  ws.style.display='block';
+  document.getElementById('cart-total').textContent=`S/ ${totalAmt}`;
+
+  body.innerHTML=cart.map(item=>{
+    const esc=s=>s.replace(/'/g,"&#39;").replace(/"/g,"&quot;");
+    const sub=item.qty>1?`<span class="ci-sub">Subtotal: S/${item.qty*item.priceNum}</span>`:'';
+    return `<div class="cart-item">
+      <div class="cart-thumb" style="background:${item.g}">${miniDancer(item.dc)}</div>
+      <div class="cart-info">
+        <div class="ci-name">${item.name}</div>
+        <div class="ci-price">${item.price}</div>
+        <input class="ci-note" placeholder="Talla / color / detalle..." value="${esc(item.note)}" oninput="updateNote('${esc(item.key)}',this.value)">
+        <div class="ci-qty">
+          <button class="qty-btn" onclick="changeQty('${esc(item.key)}',-1)">−</button>
+          <span class="qty-num">${item.qty}</span>
+          <button class="qty-btn" onclick="changeQty('${esc(item.key)}',1)">+</button>
+          ${sub}
+        </div>
+      </div>
+      <button class="cart-remove" onclick="removeFromCart('${esc(item.key)}')" title="Quitar">×</button>
+    </div>`;
+  }).join('');
+  updateWALink();
+}
+
+function updateWALink(){
+  if(cart.length===0)return;
+  const gn=(document.getElementById('global-note')||{}).value||'';
+  const lines=cart.map(i=>{
+    const n=i.note?` (${i.note})`:'';
+    return `• ${i.name}${n} ×${i.qty} — ${i.price}`;
+  });
+  const total=cart.reduce((s,i)=>s+i.qty*i.priceNum,0);
+  const msg=`Hola Kalttex! Quiero hacer el siguiente pedido:\n\n${lines.join('\n')}\n\n*Total estimado: S/ ${total}*${gn?'\n\nObservaciones: '+gn:''}\n\nPor favor confirmar disponibilidad, tallas y coordinar el pago. Gracias!`;
+  const btn=document.getElementById('cart-wa-btn');
+  if(btn)btn.href=`https://wa.me/51997480191?text=${encodeURIComponent(msg)}`;
+}
+
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2000);
+}
+
+/* ═══ PRODUCTS DATA ═══ */
+/* Para agregar imagen real: añade img:'images/nombre-del-archivo.jpg' al producto */
+const products=[
+  // ── KITS NIÑAS ROSA ──
+  {cat:'kits-ninas',lbl:'Kits Niñas · Rosa',name:'Kit Clásico',price:'S/ 60',note:'Tallas 4–14',desc:'Body + tutú 1 vuelo + panty algodón + zapatos cuerina + redecilla + vincha + collet + lazo para tutú.',badge:null,g:'linear-gradient(145deg,#fad0df,#e896b4,#c05a7a)',dc:'rgba(255,255,255,0.45)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Rosa',name:'Modelo Tinkerbell',price:'S/ 60',note:'T.4–14 · Talla S: S/65',desc:'Kit completo con falda de dos vuelos. Incluye regalo sorpresa.',badge:null,g:'linear-gradient(145deg,#fce4ec,#f48fb1)',dc:'rgba(255,255,255,0.45)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Rosa',name:'Modelo Star',price:'S/ 65',note:'T.4–14 · Talla S: S/69',desc:'Kit completo con falda de dos vuelos con brillos plateados. Incluye regalo.',badge:null,g:'linear-gradient(145deg,#fad0df,#d4748e)',dc:'rgba(255,255,255,0.5)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Rosa',name:'Modelo Norma',price:'S/ 65',note:'T.4–14 · Talla S: S/69',desc:'Kit completo con falda de dos vuelos, borde satinado. Incluye regalo.',badge:null,g:'linear-gradient(145deg,#fce4ec,#e8a0bc)',dc:'rgba(255,255,255,0.45)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Rosa',name:'Modelo Liah',price:'S/ 65',note:'T.4–14 · Talla S: S/69',desc:'Kit completo con falda de dos vuelos, puntos dorados. Incluye regalo.',badge:null,g:'linear-gradient(145deg,#fce4ec,#f8bbd0,#c9a96e)',dc:'rgba(255,255,255,0.5)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Rosa',name:'Modelo Mundo',price:'S/ 65',note:'T.4–14 · Talla S: S/69',desc:'Kit completo con falda de dos vuelos lisa. Incluye regalo.',badge:null,g:'linear-gradient(145deg,#fad8e8,#e8b0c8)',dc:'rgba(255,255,255,0.45)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Rosa',name:'Modelo Mechita',price:'S/ 65',note:'T.4–14 · Talla S: S/69',desc:'Kit completo con falda de dos vuelos, borde elegante. Incluye regalo.',badge:null,g:'linear-gradient(145deg,#fce4ec,#e090b0)',dc:'rgba(255,255,255,0.5)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Rosa',name:'Modelo Miss',price:'S/ 65',note:'T.4–14 · Talla S: S/69',desc:'Kit completo con falda envolvente de gasa rosa. Incluye regalo.',badge:null,g:'linear-gradient(145deg,#fce4ec,#f0c0d4)',dc:'rgba(255,255,255,0.45)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Rosa',name:'Modelo Picapiedra',price:'S/ 65',note:'T.4–14 · Talla S: S/69',desc:'Kit completo con falda de dos vuelos, brillos plateados. Incluye regalo.',badge:null,g:'linear-gradient(145deg,#fad0df,#d090b0)',dc:'rgba(255,255,255,0.5)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Rosa',name:'Modelo Sophia',price:'S/ 65',note:'T.4–14 · Talla S: S/69',desc:'Kit completo con falda de dos vuelos, borde decorado. Incluye regalo.',badge:null,g:'linear-gradient(145deg,#fce4ec,#e8a8bc)',dc:'rgba(255,255,255,0.5)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Rosa',name:'Modelo Flowers',price:'S/ 68',note:'T.4–14 · Talla S: S/72',desc:'Kit completo con falda de dos vuelos, diseño floral en borde. Incluye regalo.',badge:null,g:'linear-gradient(145deg,#fce4ec,#e0b0c8)',dc:'rgba(255,255,255,0.5)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Rosa',name:'Modelo Zoe',price:'S/ 68',note:'T.4–14 · Talla S: S/72',desc:'Kit completo con falda de dos vuelos plisada. Incluye regalo.',badge:null,g:'linear-gradient(145deg,#fce4ec,#eab8cc)',dc:'rgba(255,255,255,0.5)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Rosa',name:'Modelo Flowers Gold',price:'S/ 68',note:'T.4–14 · Talla S: S/72',desc:'Kit completo con falda de dos vuelos, detalles florales dorados. Incluye regalo.',badge:null,g:'linear-gradient(145deg,#fce4ec,#f8bbd0,#c9a96e)',dc:'rgba(255,255,255,0.5)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Rosa',name:'Modelo Sienna',price:'S/ 65',note:'T.4–14 · Talla S: S/69',desc:'Falda de dos vuelos con diseño de corazones dorados. Incluye regalo.',badge:'Nuevo',g:'linear-gradient(145deg,#fce4ec,#f8bbd0,#ffd700)',dc:'rgba(50,30,0,0.35)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Nuevo Color',name:'Kit Mali — Celeste',price:'S/ 75',note:'T.4–14 · Talla S: S/79',desc:'Kit en color celeste con falda de dos vuelos y zapatos de lona. Incluye regalo.',badge:'Nuevo color',g:'linear-gradient(145deg,#e3f2fd,#90caf9,#64b5f6)',dc:'rgba(10,60,120,0.35)'},
+  // ── KITS LILA ──
+  {cat:'kits-ninas',lbl:'Kits Niñas · Lila',name:'Kit Lila — Star',price:'S/ 65',note:'T.6–14 · Talla S: S/69',desc:'Kit completo en lila con falda Star (brillos). Incluye regalo.',badge:null,g:'linear-gradient(145deg,#ede7f6,#ce93d8,#9c27b0)',dc:'rgba(255,255,255,0.5)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Lila',name:'Kit Lila — Flowers',price:'S/ 68',note:'T.6–14 · Talla S: S/72',desc:'Kit lila con falda Flowers (borde floral). Incluye regalo.',badge:null,g:'linear-gradient(145deg,#ede7f6,#c0a0d8)',dc:'rgba(255,255,255,0.5)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Lila',name:'Kit Lila — Blondy',price:'S/ 65',note:'T.6–14 · Talla S: S/69',desc:'Kit lila con falda Blondy, borde de encaje blanco. Incluye regalo.',badge:null,g:'linear-gradient(145deg,#e8e0f8,#b088cc)',dc:'rgba(255,255,255,0.5)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Lila',name:'Kit Lila — Miss',price:'S/ 65',note:'T.6–14 · Talla S: S/69',desc:'Kit lila con falda envolvente Miss de gasa. Incluye regalo.',badge:null,g:'linear-gradient(145deg,#ede7f6,#c8b0e0)',dc:'rgba(255,255,255,0.5)'},
+  // ── KITS NEGRO ──
+  {cat:'kits-ninas',lbl:'Kits Niñas · Negro',name:'Kit Negro — Miss',price:'S/ 65',note:'Tallas 4–14',desc:'Kit completo negro con falda envolvente Miss.',badge:null,g:'linear-gradient(145deg,#424242,#212121)',dc:'rgba(255,255,255,0.35)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Negro',name:'Kit Negro — Star',price:'S/ 65',note:'Tallas 4–14',desc:'Body negro con falda Star (brillos).',badge:null,g:'linear-gradient(145deg,#3a3a3a,#111)',dc:'rgba(255,255,255,0.35)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Negro',name:'Kit Negro+Verde — Zoe',price:'S/ 65',note:'Tallas 4–14',desc:'Body negro con tutú verde agua.',badge:null,g:'linear-gradient(145deg,#263238,#4caf50)',dc:'rgba(255,255,255,0.45)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Negro',name:'Kit Negro+Fucsia — Zoe',price:'S/ 65',note:'Tallas 4–14',desc:'Body negro con tutú fucsia brillante.',badge:null,g:'linear-gradient(145deg,#212121,#e91e8c)',dc:'rgba(255,255,255,0.45)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Negro',name:'Kit Negro+Rosa — Zoe',price:'S/ 68',note:'Tallas 4–14',desc:'Body negro con tutú rosado, borde satinado.',badge:null,g:'linear-gradient(145deg,#212121,#f48fb1)',dc:'rgba(255,255,255,0.45)'},
+  // ── KITS BLANCO ──
+  {cat:'kits-ninas',lbl:'Kits Niñas · Blanco',name:'Kit Blanco — Snow',price:'S/ 65',note:'Tallas disponibles',desc:'Kit completo blanco con falda Snow (copos de nieve). Ideal para presentaciones.',badge:null,g:'linear-gradient(145deg,#f5f5f5,#e0e0e0)',dc:'rgba(150,130,130,0.45)'},
+  {cat:'kits-ninas',lbl:'Kits Niñas · Blanco',name:'Kit Blanco — Star',price:'S/ 65',note:'Tallas disponibles',desc:'Kit completo blanco con falda Star brillante.',badge:null,g:'linear-gradient(145deg,#fafafa,#e8e8e8)',dc:'rgba(150,130,130,0.4)'},
+  // ── KIT ADULTO ──
+  {cat:'kits-adulto',lbl:'Kit Adulto',name:'Kit de Adulto',price:'S/ 125',note:'6 piezas · Combina colores',desc:'Body licra + panty nylon "Fascinación" + zapatillas semiprofesional media punta + falda envolvente + redecilla + collet. No incluye delivery.',badge:null,g:'linear-gradient(145deg,#fce4ec,#ad1457)',dc:'rgba(255,255,255,0.5)'},
+  // ── PETITE ──
+  {cat:'petite',lbl:'Nuevo Ingreso',name:'Colección Petite',price:'S/ 75',note:'Tallas 6,8,10,12,14,S',desc:'Enterizo + falda de licra importada con forro. Lazo en espalda. Colores: negro, rosado, celeste, lila. Incluye redecilla.',badge:'Nuevo',g:'linear-gradient(145deg,#e8eaf6,#7986cb)',dc:'rgba(255,255,255,0.5)'},
+  {cat:'petite',lbl:'Colección Petite',name:'Enterizo Negro (sin lazo)',price:'S/ 69',note:'Tallas 6,8,10,12,14,S',desc:'Enterizo negro con falda de licra importada. Sin lazo en espalda.',badge:null,g:'linear-gradient(145deg,#424242,#111)',dc:'rgba(255,255,255,0.35)'},
+  // ── LEOTARDOS ──
+  {cat:'leotardos',lbl:'Leotardos Niñas',name:'Leotardo Guinda',price:'S/ 40',note:'Tallas 8,10,12,14',desc:'Licra importada con forro interno. Color guinda intenso. Tirantes anchos, corte clásico.',badge:null,g:'linear-gradient(145deg,#fce4ec,#880e4f)',dc:'rgba(255,255,255,0.5)'},
+  {cat:'leotardos',lbl:'Leotardos Señoritas',name:'Modelo Maju',price:'S/ 55',note:'Tallas S-M-L · 11 colores',desc:'Manga corta, espalda baja. Negro, guinda, piel, celeste, salmón, blanco, azul, rojo, marino, turquesa, rosa.',badge:null,g:'linear-gradient(145deg,#fce4ec,#880e4f)',dc:'rgba(255,255,255,0.5)'},
+  {cat:'leotardos',lbl:'Leotardos Señoritas',name:'Modelo Calypso',price:'S/ 55',note:'Tallas S-M-L · 6 colores',desc:'Sin mangas, espalda U profunda. Negro, guinda, piel, rojo, rosa, blanco.',badge:null,g:'linear-gradient(145deg,#fbe9e7,#6d4c41)',dc:'rgba(255,255,255,0.45)'},
+  {cat:'leotardos',lbl:'Leotardos Señoritas',name:'Modelo Madison',price:'S/ 60',note:'Tallas S-M · 12 colores',desc:'Tirantes cruzados con lazo en espalda. Diseño artístico muy elegante.',badge:null,g:'linear-gradient(145deg,#fce4ec,#4a148c)',dc:'rgba(255,255,255,0.5)'},
+  {cat:'leotardos',lbl:'Leotardos Señoritas',name:'Modelo Nia',price:'S/ 60',note:'Tallas S-M-L · Negro, guinda, piel',desc:'Manga 3/4 larga, espalda en U. Elegante para clase y presentaciones.',badge:null,g:'linear-gradient(145deg,#212121,#880e4f)',dc:'rgba(255,255,255,0.45)'},
+  {cat:'leotardos',lbl:'Leotardos Señoritas',name:'Modelo Rubi',price:'S/ 55',note:'Tallas S-M-L · Negro y guinda',desc:'Tirantes finos, espalda abierta. Licra importada con forro.',badge:null,g:'linear-gradient(145deg,#212121,#880e4f)',dc:'rgba(255,255,255,0.45)'},
+  {cat:'leotardos',lbl:'Leotardos Señoritas',name:'Modelo Liah — Encaje',price:'S/ 75',note:'Tallas S-M · Negro, guinda, acero',desc:'Manga corta con encaje en espalda y hombros. Diseño sofisticado.',badge:null,g:'linear-gradient(145deg,#1a237e,#880e4f)',dc:'rgba(255,255,255,0.5)'},
+  // ── FALDAS ──
+  {cat:'faldas',lbl:'Faldas',name:'Falda Samantha',price:'S/ 28',note:'Tallas #1(4-6) al #4(S)',desc:'Falda envolvente importada rosada con lentejuelas.',badge:null,g:'linear-gradient(145deg,#fce4ec,#f8bbd0,#ffd700)',dc:'rgba(50,30,0,0.35)'},
+  {cat:'faldas',lbl:'Faldas',name:'Falda Envolvente de Gasa',price:'S/ 20',note:'Mayor S/17 · 14 colores · T.#1–#5',desc:'Gasa fluida. Rosado, negro, blanco, lila, fucsia, chicle, vino, melón, palo rosa, azulino, acero, verde agua, verde militar, ladrillo. Talla L solo negro: S/25.',badge:null,g:'linear-gradient(145deg,#e8eaf6,#9fa8da,#4a148c)',dc:'rgba(255,255,255,0.5)'},
+  {cat:'faldas',lbl:'Faldas',name:'Falda Greta — Floreada',price:'S/ 30',note:'T.#2(8-10) #3(12-14) #4(S-M)',desc:'Envolvente de gasa con estampados florales vibrantes. Rosas, girasoles, tropicales y más.',badge:null,g:'linear-gradient(145deg,#1a237e,#e91e63,#ff9800)',dc:'rgba(255,255,255,0.5)'},
+  // ── ZAPATILLAS ──
+  {cat:'zapatillas',lbl:'Zapatillas · Del Kit',name:'Zapatillas de Cuerina',price:'S/ 15',note:'Mayor S/12 · Múltiples colores',desc:'Cuero sintético suela completa. Piel, rosa, rojo, fucsia, negro, azul, glitter y más.',badge:null,g:'linear-gradient(145deg,#fbe9e7,#d7ccc8)',dc:'rgba(80,60,50,0.4)'},
+  {cat:'zapatillas',lbl:'Zapatillas · Suela Partida',name:'Zapatillas de Lona',price:'S/ 20',note:'Mayor S/17 · Negro, rosa, piel',desc:'Lona con suela partida. Agrega +S/7 a tu kit para cambiar del cuerina.',badge:null,g:'linear-gradient(145deg,#fbe9e7,#bcaaa4)',dc:'rgba(80,60,50,0.4)'},
+  {cat:'zapatillas',lbl:'Zapatillas · Semiprofesional',name:'Semiprofesional',price:'S/ 30',note:'Mayor S/27 · Negro, rosa, piel',desc:'Mayor calidad y durabilidad. Agrega +S/20 a tu kit. Incluye bolsa de regalo.',badge:null,g:'linear-gradient(145deg,#fbe9e7,#a0948a)',dc:'rgba(80,60,50,0.45)'},
+  {cat:'zapatillas',lbl:'Zapatillas · RDance',name:'Semiprofesional RDance',price:'S/ 35',note:'Mayor S/33 · Suela dividida',desc:'Suela dividida para máxima flexibilidad. Agrega +S/25 a tu kit.',badge:null,g:'linear-gradient(145deg,#fbe9e7,#8d6e63)',dc:'rgba(255,255,255,0.4)'},
+  {cat:'zapatillas',lbl:'Zapatillas · Nuevo',name:'Media Punta Súper Stretch',price:'S/ 55',note:'T.35–39 · Negro, piel, melón',desc:'Lona súper stretch, planta cuero cromo, tiras cruzadas. Para adultas y avanzadas.',badge:'Nuevo',g:'linear-gradient(145deg,#3e2723,#d7ccc8)',dc:'rgba(255,255,255,0.45)'},
+  {cat:'zapatillas',lbl:'Zapatillas · Profesional',name:'Puntas de Ballet',price:'S/ 180',note:'Pack con puntera silicona: S/210',desc:'Puntas importadas profesionales. Variedad de tallas. Puntera silicona S/35 adicional.',badge:null,g:'linear-gradient(145deg,#fbe9e7,#c9a96e)',dc:'rgba(80,50,0,0.4)'},
+  // ── PANTYS & MEDIAS ──
+  {cat:'pantys',lbl:'Pantys',name:'Pantys de Nylon',price:'S/ 25',note:'Tallas S,M,L · Niñas rosado 4-6 a 10-12',desc:'Marca Fascinación. Rosado, blanco, negro, melón. Hormas nacionales.',badge:null,g:'linear-gradient(145deg,#e8f5e9,#a5d6a7)',dc:'rgba(20,60,30,0.4)'},
+  {cat:'pantys',lbl:'Pantys Importados',name:'Pantys Convertibles',price:'S/ 35',note:'S(6-8) M(8-10) L(12-14) XL(S-M) 2XL(M-L)',desc:'Hormas importadas. Melón, piel, negro, blanco. Alta elasticidad.',badge:null,g:'linear-gradient(145deg,#e8f5e9,#558b2f)',dc:'rgba(255,255,255,0.45)'},
+  {cat:'pantys',lbl:'Piezas Solas',name:'Body Algodón con Broche',price:'S/ 20',note:'Rosado, negro, lila, blanco, marrón, rojo, verde',desc:'Algodón suave con broche. Talla S: S/25 · Talla M y L: S/28.',badge:null,g:'linear-gradient(145deg,#fce4ec,#212121)',dc:'rgba(255,255,255,0.35)'},
+  {cat:'pantys',lbl:'Piezas Solas',name:'Panty Algodón Licrado',price:'S/ 17',note:'Rosado, negro, lila, blanco, rojo, verde',desc:'Algodón licrado de alta calidad. Talla S: S/25 · Tallas M y L: S/28.',badge:null,g:'linear-gradient(145deg,#fce4ec,#b71c1c)',dc:'rgba(255,255,255,0.45)'},
+  {cat:'pantys',lbl:'Medias',name:'Medias Antideslizantes',price:'S/ 23',note:'T.28–33 y T.34–39 · 4 colores',desc:'Ideal para marinera, gimnasia, barre yoga y baile. Piel, negro, con plomo, degradado.',badge:null,g:'linear-gradient(145deg,#263238,#546e7a)',dc:'rgba(255,255,255,0.35)'},
+  // ── GIMNASIA RÍTMICA ──
+  {cat:'gimnasia',lbl:'Gimnasia Rítmica',name:'Body+Short — Chicle',price:'S/ 60',note:'Licra importada',desc:'Estampado floral chicle con panel plateado y short a juego.',badge:null,g:'linear-gradient(145deg,#e040fb,#ff80ab)',dc:'rgba(255,255,255,0.5)'},
+  {cat:'gimnasia',lbl:'Gimnasia Rítmica',name:'Body+Short — Negro/Floreado',price:'S/ 60',note:'Licra importada',desc:'Body floral (celeste+fucsia) parte superior, short negro.',badge:null,g:'linear-gradient(145deg,#1a237e,#212121)',dc:'rgba(255,255,255,0.35)'},
+  {cat:'gimnasia',lbl:'Gimnasia Rítmica',name:'Body+Short — Negro/Lila',price:'S/ 60',note:'Licra importada',desc:'Body lila con cinturón dorado, short negro.',badge:null,g:'linear-gradient(145deg,#4a148c,#212121)',dc:'rgba(255,255,255,0.45)'},
+  {cat:'gimnasia',lbl:'Gimnasia Rítmica',name:'Body+Short — Negro/Fucsia',price:'S/ 60',note:'Licra importada',desc:'Body negro con franja fucsia y plateada.',badge:null,g:'linear-gradient(145deg,#880e4f,#212121)',dc:'rgba(255,255,255,0.45)'},
+  {cat:'gimnasia',lbl:'Gimnasia Rítmica',name:'Body+Short — Azul/Verde',price:'S/ 60',note:'Licra importada',desc:'Body floral tropical azul marino + verde agua. Short navy.',badge:null,g:'linear-gradient(145deg,#1565c0,#00695c)',dc:'rgba(255,255,255,0.45)'},
+  {cat:'gimnasia',lbl:'Gimnasia Rítmica',name:'Body+Short — Azul/Fucsia',price:'S/ 60',note:'Licra importada',desc:'Body floral azul marino con franja fucsia, short navy.',badge:null,g:'linear-gradient(145deg,#0d47a1,#e91e63)',dc:'rgba(255,255,255,0.5)'},
+  // ── ACCESORIOS ──
+  {cat:'accesorios',lbl:'Accesorios',name:'Escarpines',price:'S/ 12',note:'Mayor S/10 · Rosa, lila, negro',desc:'Calentadores de pierna tejidos para calentamiento y coreografías.',badge:null,g:'linear-gradient(145deg,#fff8e1,#ffd54f)',dc:'rgba(80,60,0,0.4)'},
+  {cat:'accesorios',lbl:'Accesorios',name:'Punteras de Lona',price:'S/ 35',note:'Varias tallas · Color piel',desc:'Para cuidado de pies en ballet y contemporáneo.',badge:null,g:'linear-gradient(145deg,#fff8e1,#c9a96e)',dc:'rgba(80,50,0,0.4)'},
+  {cat:'accesorios',lbl:'Accesorios',name:'Metatarsos',price:'S/ 25',note:'Tallas S,M,L,XL · Negro y piel',desc:'Protección de pies para ballet, marinera, gimnasia, contemporáneo.',badge:null,g:'linear-gradient(145deg,#fbe9e7,#bcaaa4)',dc:'rgba(80,60,50,0.4)'},
+  {cat:'accesorios',lbl:'Accesorios',name:'Bandas de Estiramiento',price:'S/ 35',note:'4 colores: rosa, chicle, menta, lila',desc:'Cinturón numerado de alta resistencia. Para ballet, yoga y pilates.',badge:null,g:'linear-gradient(145deg,#e1f5fe,#ce93d8)',dc:'rgba(255,255,255,0.45)'},
+  {cat:'accesorios',lbl:'Accesorios · Cabello',name:'Redecillas Invisibles',price:'S/ 8',note:'Pack 3 negro · Sueltas pack 2: S/5',desc:'Hair Nets ideales para presentaciones. Negro y café.',badge:null,g:'linear-gradient(145deg,#fff8e1,#d4a76a)',dc:'rgba(80,50,0,0.4)'},
+  {cat:'accesorios',lbl:'Accesorios · Cabello',name:'Accesorios de Cabello',price:'S/ 5',note:'Desde S/5 hasta S/14',desc:'Vinchas, cintas con bailarinas, moños y lazos decorados para presentaciones.',badge:null,g:'linear-gradient(145deg,#fce4ec,#f48fb1)',dc:'rgba(255,255,255,0.45)'},
+  {cat:'accesorios',lbl:'Accesorios · Regalo',name:'Tomatodos Ballet',price:'S/ 15',note:'Con compra de cualquier producto',desc:'Temáticas ballet y gimnasia rítmica. Con frase motivadora.',badge:null,g:'linear-gradient(145deg,#fce4ec,#f8bbd0)',dc:'rgba(255,255,255,0.45)'},
+  {cat:'accesorios',lbl:'Accesorios · Joyería',name:'Llaveros de Ballet',price:'S/ 10',note:'Varios diseños',desc:'Diseños de bailarinas y zapatillas de punta.',badge:null,g:'linear-gradient(145deg,#fff8e1,#ffd54f)',dc:'rgba(80,60,0,0.4)'},
+  {cat:'accesorios',lbl:'Accesorios · Joyería',name:'Collares de Ballet',price:'S/ 15',note:'Varios diseños',desc:'Collares temáticos delicados. Perfectos para regalar.',badge:null,g:'linear-gradient(145deg,#fce4ec,#c9a96e)',dc:'rgba(80,50,0,0.4)'},
+  {cat:'accesorios',lbl:'Accesorios',name:'Bloques de Yoga',price:'S/ 20',note:'Rosado, morado, turquesa, amarillo',desc:'Auxiliares para estiramientos de ballet, yoga y contemporáneo.',badge:null,g:'linear-gradient(145deg,#e3f2fd,#e040fb)',dc:'rgba(255,255,255,0.5)'},
+];
+
+/* ═══ RENDER ═══ */
+function cardDancer(dc){
+  return `<div class="dancer-wrap" style="background:transparent"><svg viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg" style="width:60%;position:absolute;opacity:.38"><ellipse cx="50" cy="11" rx="7.5" ry="8.5" fill="${dc}"/><path d="M50 20C46 29 42 39 41 49C39 59 44 65 50 65C56 65 61 59 59 49C58 39 54 29 50 20Z" fill="${dc}"/><path d="M34 60C21 66 12 78 10 88C23 83 36 80 50 80C64 80 77 83 90 88C88 78 79 66 66 60Z" fill="${dc}" opacity=".55"/><path d="M28 63C15 72 6 88 4 100C20 93 35 89 50 89C65 89 80 93 96 100C94 88 85 72 72 63Z" fill="${dc}" opacity=".28"/><line x1="43" y1="32" x2="25" y2="25" stroke="${dc}" stroke-width="4.5" stroke-linecap="round"/><line x1="57" y1="32" x2="77" y2="21" stroke="${dc}" stroke-width="4.5" stroke-linecap="round"/><line x1="47" y1="80" x2="44" y2="128" stroke="${dc}" stroke-width="4.5" stroke-linecap="round"/><line x1="53" y1="80" x2="63" y2="123" stroke="${dc}" stroke-width="4.5" stroke-linecap="round"/></svg></div>`;
+}
+
+function render(cat){
+  const list=cat==='all'?products:products.filter(p=>p.cat===cat);
+  document.getElementById('grid').innerHTML=list.map((p,i)=>`
+    <div class="product-card" style="animation-delay:${Math.min(i,12)*.04}s">
+      <div class="card-image" style="background:${p.g}" onclick="addToCart(${products.indexOf(p)})">
+        ${p.badge?`<span class="card-badge${p.badge.toLowerCase().includes('nuevo')||p.badge.toLowerCase().includes('color')?' nuevo':''}">${p.badge}</span>`:''}
+        ${p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:''}
+        ${cardDancer(p.dc)}
+      </div>
+      <div class="card-body">
+        <div class="card-cat">${p.lbl}</div>
+        <div class="card-name">${p.name}</div>
+        <div class="card-desc">${p.desc}</div>
+        <div class="card-footer">
+          <div>
+            <span class="card-price">${p.price}</span>
+            <span class="card-price-note">${p.note}</span>
+          </div>
+          <button class="card-add" id="add-btn-${products.indexOf(p)}" onclick="addToCart(${products.indexOf(p)})">+ Agregar</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function filterCat(cat,btn){
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  else{
+    const map={'kits-ninas':'Kits Niñas','kits-adulto':'Kit Adulto','petite':'Colección Petite','leotardos':'Leotardos','faldas':'Faldas','zapatillas':'Zapatillas','pantys':'Pantys & Medias','gimnasia':'Gimnasia Rítmica','accesorios':'Accesorios'};
+    document.querySelectorAll('.cat-btn').forEach(b=>{ if(b.textContent.trim()===map[cat]||cat==='all'&&b.textContent==='Todos')b.classList.add('active'); });
+  }
+  render(cat);
+  document.getElementById('catalogo').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+render('all');
+renderCart();
+</script>
+</body>
+</html>
